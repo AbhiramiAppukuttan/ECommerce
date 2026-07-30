@@ -25,29 +25,22 @@ function AdminDashboard() {
 
         <div className="d-grid gap-3">
 
-          <Link
-            to="/admin-home"
-            className="text-white text-decoration-none"
-          >
-            Dashboard
-          </Link>
-
-          <Link
-            to="/add-product"
+                    <Link
+            to="/admin-home/add-product"
             className="text-white text-decoration-none"
           >
             Add Product
           </Link>
 
           <Link
-            to="/view-product"
+            to="/admin-home/view-product"
             className="text-white text-decoration-none"
           >
             View Products
           </Link>
 
           <Link
-            to="/view-user"
+            to="/admin-home/view-user"
             className="text-white text-decoration-none"
           >
             View Users
