@@ -19,7 +19,7 @@ function EditProduct() {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/product/view/${id}`
+          `https://ecommerce-iib4.onrender.com/product/view/${id}`
         )
         setProduct(response.data.product)
       } catch (error) {
@@ -49,7 +49,7 @@ function EditProduct() {
       const token = localStorage.getItem('token')
 
       await axios.put(
-        `http://localhost:4000/product/update/${id}`,
+        `https://ecommerce-iib4.onrender.com/product/update/${id}`,
         product,
         {
           headers: {

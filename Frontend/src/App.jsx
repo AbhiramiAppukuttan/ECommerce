@@ -31,7 +31,7 @@ function App(){
     try {
 
       const response = await axios.get(
-        'http://localhost:4000/product/all'
+        'https://ecommerce-iib4.onrender.com/product/all'
       )
 
       console.log(response.data)

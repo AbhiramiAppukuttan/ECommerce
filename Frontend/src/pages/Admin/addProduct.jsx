@@ -30,7 +30,7 @@ function AddProduct() {
       const token = localStorage.getItem('token')
 
       const response = await axios.post(
-        'http://localhost:4000/product/create',
+        'https://ecommerce-iib4.onrender.com/product/create',
         product,
         {
           headers: {

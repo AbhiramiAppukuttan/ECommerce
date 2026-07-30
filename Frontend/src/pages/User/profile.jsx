@@ -15,7 +15,7 @@ function Profile() {
       const token = localStorage.getItem('token')
 
       const response = await axios.get(
-        'http://localhost:4000/user/profile',
+        'https://ecommerce-iib4.onrender.com/user/profile',
         {
           headers: {
             Authorization: `Bearer ${token}`

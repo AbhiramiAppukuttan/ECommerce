@@ -51,7 +51,7 @@ function Registration() {
       try {
 
         const response = await axios.post(
-          'http://localhost:4000/user/signup',
+          'https://ecommerce-iib4.onrender.com/user/signup',
           //  `${BASE_URL}/user/signup`,
           values
         )

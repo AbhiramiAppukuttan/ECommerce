@@ -20,7 +20,7 @@ function ProductDetails() {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/product/view/${id}`
+          `https://ecommerce-iib4.onrender.com/product/view/${id}`
         )
         setSingleProduct(response.data.product)
       } catch (error) {

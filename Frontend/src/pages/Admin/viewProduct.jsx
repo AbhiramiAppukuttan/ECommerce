@@ -12,7 +12,7 @@ function ViewProducts() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/product/all')
+        const response = await axios.get('https://ecommerce-iib4.onrender.com/product/all')
         setProducts(response.data.products)
       } catch (error) {
         console.log(error)
@@ -29,7 +29,7 @@ function ViewProducts() {
       const token = localStorage.getItem('token')
 
       await axios.delete(
-        `http://localhost:4000/product/delete/${id}`,
+        `https://ecommerce-iib4.onrender.com/product/delete/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

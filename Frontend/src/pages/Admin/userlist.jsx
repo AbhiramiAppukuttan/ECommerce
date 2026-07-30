@@ -12,7 +12,7 @@ function UserList() {
       try {
         const token = localStorage.getItem('token')
         const response = await axios.get(
-          'http://localhost:4000/user/all-users',
+          'https://ecommerce-iib4.onrender.com/user/all-users',
           { headers: { Authorization: `Bearer ${token}` } }
         )
         setUsers(response.data.users)

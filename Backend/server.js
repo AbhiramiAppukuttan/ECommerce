@@ -10,7 +10,7 @@ const app =  express();
 connectDb()
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://e-commerce-ecru-sigma-84.vercel.app',
     credentials: true,
     optionsSuccessStatus:200,
 }));
