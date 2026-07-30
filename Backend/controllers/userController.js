@@ -113,12 +113,13 @@ const userController = {
       }) 
 
      
-    } catch(error){
+    } catch (error) {
+      console.error("Signin Error:", error);
 
       return res.status(500).json({
-        message:"Internal server error"
-      })  
-
+        message: error.message,
+        error: error.stack
+      });
     }
 
   },
