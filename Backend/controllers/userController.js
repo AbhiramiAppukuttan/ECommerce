@@ -62,67 +62,52 @@ const userController = {
 
   },
 
-  signin:async(req,res)=>{
+  signin: async (req, res) => {
 
-    const {email,password} = req.body;
+  console.log("Signin API called");
 
-    try {
+  const { email, password } = req.body;
 
-      if(!email || !password){
+  try {
+    console.log(email);
 
-        return res.status(400).json({
-          message:"All fields are required"
-        })
+    const user = await User.findOne({ email });
 
-      }
-
-      const user = await User.findOne({email});
-
-      if(!user){
-        return res.status(400).json({
-          message:"User not found"
-        })
-      }
-
-      const isMatch = await bcrypt.compare(password, user.password);
-
-      if(!isMatch){
-        return res.status(400).json({
-          message:"Incorrect password"
-        })
-      }
-
-      const payload = {
-        userId:user._id,
-        name:user.name,
-        email:user.email,
-        role:user.role
-       }
-
-      const token = jwt.sign(payload,process.env.JWT_SECRET,{expiresIn:'1d'})
-
-      res.status(200).json({
-        message:"Login successful",
-        token,
-        user: {
-          userId: user._id,
-          name: user.name,
-          email: user.email,
-          role: user.role
-        }
-      }) 
-
-     
-    } catch (error) {
-      console.error("Signin Error:", error);
-
-      return res.status(500).json({
-        message: error.message,
-        error: error.stack
+    if (!user) {
+      return res.status(404).json({
+        message: "User not found"
       });
     }
 
-  },
+    const isMatch = await bcrypt.compare(password, user.password);
+    console.log(isMatch);
+
+    const token = jwt.sign(
+      {
+        userId: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
+
+    console.log("Token created");
+
+    res.status(200).json({
+      message: "Login successful",
+      token,
+      user
+    });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      message: error.message
+    });
+  }
+},
 
   profile:async(req,res)=>{
 
