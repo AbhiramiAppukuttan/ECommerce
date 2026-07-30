@@ -33,21 +33,21 @@ function AdminDashboard() {
           </Link>
 
           <Link
-            to="admin-home/add-product"
+            to="/add-product"
             className="text-white text-decoration-none"
           >
             Add Product
           </Link>
 
           <Link
-            to="admin-home/view-product"
+            to="/view-product"
             className="text-white text-decoration-none"
           >
             View Products
           </Link>
 
           <Link
-            to="admin-home/view-user"
+            to="/view-user"
             className="text-white text-decoration-none"
           >
             View Users
