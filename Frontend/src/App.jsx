@@ -89,29 +89,27 @@ function App(){
 
             <Route path="/admin-home" element={
               <ProtectedRoute>
-                  <AdminDashboard />
+                <AdminDashboard />
               </ProtectedRoute>
             }>
 
-              
               <Route
-                path="admin-home/add-product"
+                path="add-product"
                 element={<AddProduct />}
               />
 
               <Route
-                path="admin-home/view-product"
+                path="view-product"
                 element={<ViewProducts />}
               />
 
-
               <Route
-                path="admin-home/edit-product/:id"
+                path="edit-product/:id"
                 element={<EditProduct />}
               />
 
               <Route
-                path="admin-home/view-user"
+                path="view-user"
                 element={<UserList />}
               />
 
